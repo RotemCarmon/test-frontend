@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test Frontend</title>
+    </head>
+    <body>
+
+        <button onclick="getInventory(2274)">Get Inventory</button>
+
+        <script>
+            async function getInventory(bizCode = 2274) {
+              const res =  await fetch(`http://localhost:3060/api/inventory?bizCode=${bizCode}`, {mode: 'cors'}).then(response => response.json()).catch(console.error);  
+              console.log('res:', res)
+            }
+        </script>
+    </body>
+</html>
